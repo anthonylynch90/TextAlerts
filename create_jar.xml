@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_executable_jar" name="Create Runnable Jar for Project assessment">
+    <property name="dist.dir" location="dist" />
+    <target name="create_executable_jar">
+    <!-- 1. Modify the name of the JAR file to be created. -->
+        <jar destfile="${dist.dir}/textAlert.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <!-- 2. Modify the name of the main class. -->
+                <attribute name="Main-Class" value="textAlert.World"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="src"/>
+            <fileset dir="bin"/>
+        </jar>
+    </target>
+</project>
